@@ -472,9 +472,17 @@
     }
 
     /* ─── CALENDLY STANDALONE ─── */
+    .calendly-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 40px;
+    }
+    .calendly-heading .section-eyebrow { justify-content: center; }
+    .calendly-heading .section-eyebrow::before { display: none; }
+    .calendly-heading .section-body { max-width: 100%; margin: 0 auto; }
     .calendly-section {
       background: var(--charcoal);
-      padding: 0 40px 80px;
+      padding: 64px 40px 80px;
     }
     .calendly-standalone {
       border: 1px solid var(--rule);
@@ -700,13 +708,32 @@
 
   <hr class="rule">
 
+
+
+  <!-- ─── CALENDLY STANDALONE ─── -->
+  <div class="calendly-section" id="book">
+    <div class="container">
+      <div class="calendly-heading">
+        <h2 class="section-title">Book Your <em>In-Person Appointment</em></h2>
+        <p class="section-body">Pick a date and time that suits you. We'll have a specialist ready to value your gold — privately, honestly, and without any pressure.</p>
+      </div>
+      <div class="calendly-standalone">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/william-ampmluxury/30min"
+             style="width:100%;height:700px;"></div>
+        <script type="text/javascript"
+                src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </div>
+
   <!-- ─── BOOKING INFO ─── -->
-  <div class="book-info-section" id="book">
+  <div class="book-info-section">
     <div class="container">
       <div class="book-info-header">
         <div>
-          <p class="section-eyebrow">Book an Appointment</p>
-          <h2 class="section-title">Get Your Gold <em>Valued Today</em></h2>
+          <p class="section-eyebrow">Why Book With Us</p>
+          <h2 class="section-title">What to <em>Expect</em></h2>
           <p class="section-body">Free, no-obligation valuations in our Belfast City Centre showroom. Appointments take around 30 minutes — bring along any gold you'd like assessed.</p>
         </div>
         <div class="walkin-note">
@@ -737,21 +764,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ─── CALENDLY STANDALONE ─── -->
-  <div class="calendly-section">
-    <div class="container">
-      <div class="calendly-standalone">
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/william-ampmluxury/30min"
-             style="width:100%;height:700px;"></div>
-        <script type="text/javascript"
-                src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </div>
-    </div>
-  </div>
-
-  <hr class="rule">
 
   <hr class="rule">
 
