@@ -98,7 +98,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://cdn.shopify.com/s/files/1/0842/2706/4073/files/hf_20260116_165039_b627223f-068b-4bad-bda2-4b50bbfcae6f.png?v=1768582619');
+      background-image: url('https://cdn.shopify.com/s/files/1/0842/2706/4073/files/hf_20260609_130623_e40c0f2b-8bb0-4665-a643-3727dbc4b7da.png?v=1781010662');
       background-size: cover;
       background-position: center right;
       background-repeat: no-repeat;
@@ -172,29 +172,8 @@
     }
     .trust-divider { width: 1px; background: var(--rule); align-self: stretch; }
 
-    /* ─── CALENDLY (hero-adjacent) ─── */
-    .hero-book {
-      background: var(--charcoal);
-      padding: 80px 40px;
-    }
-    .hero-book .container {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .book-left {}
-    .book-assurances { margin-top: 40px; display: flex; flex-direction: column; }
-    .assurance {
-      display: flex; align-items: flex-start; gap: 16px;
-      padding: 20px 0; border-bottom: 1px solid var(--rule);
-    }
-    .assurance:first-child { border-top: 1px solid var(--rule); }
-    .assurance-icon { color: var(--gold); font-size: 16px; flex-shrink:0; margin-top:2px; }
-    .assurance-text { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.6; }
-    .assurance-text strong { display: block; font-weight: 500; color: var(--white); margin-bottom: 2px; font-size: 14px; }
+    /* ─── WALKIN NOTE ─── */
     .walkin-note {
-      margin-top: 24px;
       padding: 16px 20px;
       border: 1px solid var(--rule);
       background: rgba(184,149,42,0.05);
@@ -202,9 +181,10 @@
       font-weight: 300;
       color: rgba(255,255,255,0.55);
       line-height: 1.6;
+      max-width: 380px;
+      align-self: flex-end;
     }
     .walkin-note strong { color: var(--gold-light); font-weight: 500; }
-    .calendly-wrap { border: 1px solid var(--rule); overflow: hidden; }
 
     /* ─── SECTIONS ─── */
     section { padding: 100px 40px; }
@@ -405,24 +385,103 @@
     .footer-text { font-size: 12px; color: var(--muted); text-align: right; }
     .footer-text a { color: var(--gold); }
 
-    /* ─── WHATSAPP STICKY ─── */
-    .wa-sticky {
+    /* ─── STICKY STACK ─── */
+    .sticky-stack {
       position: fixed;
       bottom: 28px; right: 28px;
       z-index: 200;
-      display: flex; align-items: center; gap: 12px;
-      background: #25D366;
-      color: #fff;
-      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .sticky-book {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 12px 18px;
       font-family: var(--sans);
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       box-shadow: 0 4px 24px rgba(0,0,0,0.45);
       transition: background 0.2s, transform 0.15s;
       text-decoration: none;
+      white-space: nowrap;
+    }
+    .sticky-book:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .sticky-book svg { flex-shrink: 0; }
+    .wa-sticky {
+      display: flex; align-items: center; gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 18px;
+      font-family: var(--sans);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      white-space: nowrap;
     }
     .wa-sticky:hover { background: #1ebe5c; transform: translateY(-2px); }
     .wa-sticky svg { flex-shrink: 0; }
+
+    /* ─── BOOK INFO SECTION ─── */
+    .book-info-section {
+      background: var(--charcoal);
+      padding: 80px 40px 48px;
+    }
+    .book-info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .book-info-header > div:first-child { flex: 1; min-width: 280px; }
+    .book-assurances-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .assurance-card {
+      background: var(--dark);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .assurance-card .assurance-icon {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .assurance-card strong {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .assurance-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    /* ─── CALENDLY STANDALONE ─── */
+    .calendly-section {
+      background: var(--charcoal);
+      padding: 0 40px 80px;
+    }
+    .calendly-standalone {
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
     /* ─── RESPONSIVE TABLET ─── */
     @media (max-width: 900px) {
@@ -431,7 +490,9 @@
       section, .gold-types, .showroom, .whatsapp-section, .hero-book { padding: 56px 20px; }
       hr.rule { margin: 0 20px; }
       .hero { padding: 110px 20px 56px; }
-      .hero-book .container { grid-template-columns: 1fr; gap: 36px; }
+      .book-info-header { flex-direction: column; gap: 24px; }
+      .book-assurances-row { grid-template-columns: 1fr 1fr; }
+      .calendly-section { padding: 0 20px 56px; }
       .gold-types-grid { grid-template-columns: 1fr 1fr; }
       .showroom-grid { grid-template-columns: 1fr; gap: 32px; }
       .why-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -525,32 +586,74 @@
       .loc-label { flex: 0 0 80px; font-size: 10px; }
       .loc-val { font-size: 14px; }
 
-      /* WhatsApp sticky — icon only on mobile */
-      .wa-sticky { 
-        bottom: 16px; right: 16px;
-        padding: 14px;
-        border-radius: 50%;
-        width: 52px; height: 52px;
-        justify-content: center;
-      }
+      /* Sticky stack — compact on mobile */
+      .sticky-stack { bottom: 16px; right: 16px; gap: 8px; }
+      .sticky-book { padding: 10px 14px; font-size: 11px; }
+      .sticky-book span { display: none; }
+      .sticky-book { width: 44px; height: 44px; justify-content: center; padding: 0; }
+      .wa-sticky { width: 44px; height: 44px; justify-content: center; padding: 0; }
       .wa-sticky span { display: none; }
+
+      /* Booking info */
+      .book-info-section { padding: 48px 16px 32px; }
+      .book-info-header { flex-direction: column; gap: 24px; margin-bottom: 24px; }
+      .book-assurances-row { grid-template-columns: 1fr 1fr; }
+      .assurance-card { padding: 20px 16px; }
+      .calendly-section { padding: 0 16px 48px; }
+      .calendly-inline-widget { height: 600px !important; }
 
       /* Footer */
       footer { padding: 36px 16px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
       .footer-text { text-align: left; font-size: 11px; }
     }
+
+    /* ─── ROUNDED CORNERS ─── */
+    .nav-cta,
+    .btn-primary,
+    .btn-secondary,
+    .btn-whatsapp,
+    .sticky-book,
+    .wa-sticky,
+    .assurance-card,
+    .walkin-note,
+    .step,
+    .review-card,
+    .calendly-standalone,
+    .gold-type-card,
+    .showroom-img-wrap,
+    .map-placeholder,
+    .why-item,
+    .whatsapp-inner,
+    iframe,
+    .hero-trust .trust-item { border-radius: 6px; }
+
+    .gold-types-grid,
+    .process-steps,
+    .book-assurances-row { border-radius: 6px; overflow: hidden; }
+
   </style>
 </head>
 <body>
 
-  <!-- ─── WHATSAPP STICKY ─── -->
-  <a class="wa-sticky" href="https://wa.me/447522804000" target="_blank" rel="noopener">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-    <span>WhatsApp Us</span>
-  </a>
+  <!-- ─── STICKY BUTTONS ─── -->
+  <div class="sticky-stack">
+    <a class="sticky-book" href="#book">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <span>Book Appointment</span>
+    </a>
+    <a class="wa-sticky" href="https://wa.me/447522804000" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>WhatsApp Us</span>
+    </a>
+  </div>
 
   <!-- ─── NAV ─── -->
   <nav>
@@ -597,58 +700,134 @@
 
   <hr class="rule">
 
-  <!-- ─── BOOKING (directly below hero) ─── -->
-  <div class="hero-book" id="book">
+  <!-- ─── BOOKING INFO ─── -->
+  <div class="book-info-section" id="book">
     <div class="container">
-      <div class="book-left" style="grid-column:1;">
-        <p class="section-eyebrow">Book an Appointment</p>
-        <h2 class="section-title">Get Your Gold<br><em>Valued Today</em></h2>
-        <p class="section-body">Free, no-obligation valuations in our Belfast City Centre showroom. Pick a time below — appointments take around 30 minutes. Bring along any gold you'd like assessed.</p>
-        <div class="book-assurances">
-          <div class="assurance">
-            <span class="assurance-icon">✓</span>
-            <div class="assurance-text">
-              <strong>No Obligation to Sell</strong>
-              Come in, get your valuation, and decide from there. No pressure, ever.
-            </div>
-          </div>
-          <div class="assurance">
-            <span class="assurance-icon">✓</span>
-            <div class="assurance-text">
-              <strong>Best Price in Belfast</strong>
-              We benchmark against live gold rates and aim to beat any legitimate offer you've had.
-            </div>
-          </div>
-          <div class="assurance">
-            <span class="assurance-icon">✓</span>
-            <div class="assurance-text">
-              <strong>Completely Discreet</strong>
-              Private appointments in our brand new City Centre showroom. 1 minute from City Hall.
-            </div>
-          </div>
-          <div class="assurance">
-            <span class="assurance-icon">✓</span>
-            <div class="assurance-text">
-              <strong>Paid on the Spot</strong>
-              Accept our offer and receive immediate payment. No waiting, no follow-ups.
-            </div>
-          </div>
+      <div class="book-info-header">
+        <div>
+          <p class="section-eyebrow">Book an Appointment</p>
+          <h2 class="section-title">Get Your Gold <em>Valued Today</em></h2>
+          <p class="section-body">Free, no-obligation valuations in our Belfast City Centre showroom. Appointments take around 30 minutes — bring along any gold you'd like assessed.</p>
         </div>
         <div class="walkin-note">
           <strong>Walk-ins welcome</strong> — though we'd recommend booking to guarantee your slot. Appointments get priority and a dedicated member of the team.
         </div>
       </div>
-      <div style="grid-column:2;">
-        <div class="calendly-wrap">
-          <div class="calendly-inline-widget"
-               data-url="https://calendly.com/william-ampmluxury/30min"
-               style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript"
-                  src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <div class="book-assurances-row">
+        <div class="assurance-card">
+          <span class="assurance-icon">✓</span>
+          <strong>No Obligation to Sell</strong>
+          <p>Come in, get your valuation, decide from there.</p>
+        </div>
+        <div class="assurance-card">
+          <span class="assurance-icon">✓</span>
+          <strong>Best Price in Belfast</strong>
+          <p>Benchmarked against live gold rates every day.</p>
+        </div>
+        <div class="assurance-card">
+          <span class="assurance-icon">✓</span>
+          <strong>Completely Discreet</strong>
+          <p>Private appointments, 1 minute from City Hall.</p>
+        </div>
+        <div class="assurance-card">
+          <span class="assurance-icon">✓</span>
+          <strong>Paid on the Spot</strong>
+          <p>Accept our offer and get paid immediately.</p>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- ─── CALENDLY STANDALONE ─── -->
+  <div class="calendly-section">
+    <div class="container">
+      <div class="calendly-standalone">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/william-ampmluxury/30min"
+             style="width:100%;height:700px;"></div>
+        <script type="text/javascript"
+                src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <hr class="rule">
+
+  <!-- ─── REVIEWS ─── -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <div>
+          <p class="section-eyebrow">What Our Customers Say</p>
+          <h2 class="section-title" style="margin-bottom:0;">100+ Five-Star<br><em>Trustpilot Reviews</em></h2>
+        </div>
+        <div class="tp-badge">
+          <div>
+            <div class="tp-score">4.8</div>
+            <div class="tp-stars">★★★★★</div>
+          </div>
+          <div style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.4);margin-left:4px;">
+            Rated Excellent<br>on Trustpilot
+          </div>
+        </div>
+      </div>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Jewellery sold for a good price and a very straightforward process. The coffee was lovely too!"</p>
+            <span class="review-author">Heather · Verified</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I have bought and sold quite a few watches with William and always 1st class service. Everything is as described — highly recommended."</p>
+            <span class="review-author">Andrew Philip</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I have known William and his team for a few years from both the buying and selling side. They're always sharing accurate information about the current market to get you a fair price."</p>
+            <span class="review-author">Annon</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I was looking for a gold chain or bracelet. The lady in the shop showed me examples to try and even advised me on the right length. Brilliant service."</p>
+            <span class="review-author">James A Anderson</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I recently left my Rolex on consignment with them and it was sold in no time via their extensive WhatsApp group. Payment was completely smooth and very trustworthy."</p>
+            <span class="review-author">Sam Hughes</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I've been supporting AMPM since my first encounter back with McNeillys. Extremely helpful, knowledgeable and friendly. Would recommend William and the team without hesitation."</p>
+            <span class="review-author">Paul</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"William was fantastic, guided me through the whole process. Direct, no bullshit. Five stars without question."</p>
+            <span class="review-author">Hugh Hay</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"William was really easy to deal with. A totally hassle-free transaction from start to finish. Would have no hesitation in recommending."</p>
+            <span class="review-author">Glenn Baine</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Can't be beaten on service levels and I've yet to find them beaten on price for the same quality. A great team all round."</p>
+            <span class="review-author">Rich Burns</span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </section>
 
   <hr class="rule">
 
@@ -779,82 +958,6 @@
 
   <hr class="rule">
 
-  <!-- ─── REVIEWS ─── -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <div class="reviews-header">
-        <div>
-          <p class="section-eyebrow">What Our Customers Say</p>
-          <h2 class="section-title" style="margin-bottom:0;">100+ Five-Star<br><em>Trustpilot Reviews</em></h2>
-        </div>
-        <div class="tp-badge">
-          <div>
-            <div class="tp-score">4.8</div>
-            <div class="tp-stars">★★★★★</div>
-          </div>
-          <div style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.4);margin-left:4px;">
-            Rated Excellent<br>on Trustpilot
-          </div>
-        </div>
-      </div>
-      <div class="carousel-track-wrap">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Jewellery sold for a good price and a very straightforward process. The coffee was lovely too!"</p>
-            <span class="review-author">Heather · Verified</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I have bought and sold quite a few watches with William and always 1st class service. Everything is as described — highly recommended."</p>
-            <span class="review-author">Andrew Philip</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I have known William and his team for a few years from both the buying and selling side. They're always sharing accurate information about the current market to get you a fair price."</p>
-            <span class="review-author">Annon</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I was looking for a gold chain or bracelet. The lady in the shop showed me examples to try and even advised me on the right length. Brilliant service."</p>
-            <span class="review-author">James A Anderson</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I recently left my Rolex on consignment with them and it was sold in no time via their extensive WhatsApp group. Payment was completely smooth and very trustworthy."</p>
-            <span class="review-author">Sam Hughes</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"I've been supporting AMPM since my first encounter back with McNeillys. Extremely helpful, knowledgeable and friendly. Would recommend William and the team without hesitation."</p>
-            <span class="review-author">Paul</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"William was fantastic, guided me through the whole process. Direct, no bullshit. Five stars without question."</p>
-            <span class="review-author">Hugh Hay</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"William was really easy to deal with. A totally hassle-free transaction from start to finish. Would have no hesitation in recommending."</p>
-            <span class="review-author">Glenn Baine</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Can't be beaten on service levels and I've yet to find them beaten on price for the same quality. A great team all round."</p>
-            <span class="review-author">Rich Burns</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
-        <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
-      </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
   <!-- ─── WHATSAPP SECTION ─── -->
   <div class="whatsapp-section">
     <div class="whatsapp-inner">
@@ -959,8 +1062,6 @@
       autoTimer = setInterval(() => { if (current >= maxIndex()) { current = -1; } move(1); }, 5000);
     }));
 
-    // Fix booking grid layout (needs to be applied after parse)
-    document.querySelector('.hero-book .container').style.cssText = 'max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;';
   </script>
 
 </body>
